@@ -29,13 +29,13 @@ st.markdown("**Real Indian Used Car Data** • Resale Prediction • Maintenance
 st.caption(f"Updated: {datetime.now().strftime('%Y-%m-%d %H:%M IST')} | Chennai, India")
 
 # ─── Load & prepare real dataset ───
-csv_file = Path(__file__).parent / "car data dekho.csv"
+csv_file = Path(__file__).parent / "used_cars_data.csv"
 
 if 'df' not in st.session_state:
     if csv_file.exists():
         st.session_state.df = pd.read_csv(csv_file)
     else:
-        st.error("Place 'car data dekho.csv' in the same folder!")
+        st.error("Place 'used_cars_data.csv' in the same folder!")
         st.stop()
 
 if 'maintenance_risk_score' not in st.session_state.df.columns:
